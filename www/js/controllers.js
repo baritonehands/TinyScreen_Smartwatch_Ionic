@@ -17,24 +17,17 @@ angular.module('starter.controllers', [])
   bluetoothSerial.connect($stateParams.id, function(device) {
     $scope.device = device;
     var now = new Date();
-    bluetoothSerial.write("D2015 05 11 23 40 00");
+    bluetoothSerial.write('D2015 05 11 21 40 00');
     $scope.$digest();
   })
 })
 
-.controller('ChatsCtrl', function($scope, Chats) {
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  }
+.controller('SettingsCtrl', function($scope) {
+  $scope.settings = [
+    { name: 'Setting 1', value: 'Value' }
+  ];
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
   $scope.chat = Chats.get($stateParams.chatId);
-})
-
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
 });
