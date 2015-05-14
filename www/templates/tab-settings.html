@@ -1,9 +1,9 @@
 <ion-view view-title="Settings">
   <ion-content>
     <ion-list>
-      <ion-item class="item item-icon-right" ng-repeat="setting in settings" type="item-text-wrap" href="#/tab/settings/{{setting.id}}">
-        {{setting.name}}
-        <span class="item-note">{{setting.value}}</span>
+      <ion-item class="item item-icon-right" ng-repeat="setting in settings" type="item-text-wrap" href="#/tab/settings/{{setting}}">
+        {{get(setting).name}}
+        <span class="item-note">{{get(setting).selected}}</span>
         <i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>
     </ion-list>

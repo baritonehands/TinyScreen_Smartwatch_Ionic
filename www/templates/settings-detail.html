@@ -1,0 +1,13 @@
+<ion-view view-title="{{setting.name}}">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item item-radio" ng-repeat="val in setting.values" type="item-text-wrap" ng-click="selectValue(val)">
+        <input type="radio" name="{{setting.name}}" value="{{val}}" ng-checked="setting.selected === val"/>
+        <div class="item-content">
+          {{val}}
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
